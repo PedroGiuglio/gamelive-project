@@ -114,11 +114,14 @@ header li {
 .sectionStock{
   color: black;
   font-weight: bold;
-  margin-top: 15px;
 }
 
 .sectionStock p{
-  margin-bottom: 25px;
+  margin-bottom: 90px;
+}
+
+.sectionStock .buttton{
+  margin-top: 10px;
 }
 
 

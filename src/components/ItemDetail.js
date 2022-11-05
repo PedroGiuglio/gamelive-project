@@ -2,20 +2,21 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
 import { useCart } from "./context/AddContext";
+import Clicker from "./Clicker";
 
 
 const ItemDetail = () => {
 
   const { id } = useParams()
-  const { id: idParam} = useParams()
+  const { data: idParam} = useParams()
 
   const [item, setItem] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading2, setLoading2] = useState(true)
   const {addToCart} = useCart()
 
   useEffect(() => {
     getProduct().then(response =>{
-      setLoading(false)
+      setLoading2(false)
     })
   }, [])
 
@@ -28,16 +29,26 @@ const ItemDetail = () => {
     })
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(item.find(i => i.id == idParam))
-      }, 3000);
+        resolve(item.find(i => i.data == idParam))
+      }, 2000);
     })
   }
 
-  if (loading) {
+  if (loading2) {
     return (
-      <div className="spinner-container">
-      <div className="loading-spinner"></div>
-    </div>
+      <div className="itemListDetail">
+      <div className="backImg">
+        <img className="urlImg" src='https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg'></img>
+      </div>
+      <div className="sectionTitle">
+        <h2>...</h2>
+        <h4>$...</h4>
+      </div>
+      <div className="sectionStock">
+        <p>Stock disponible: ...</p>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Agregar al Carrito</button>
+      </div>      
+</div>
     )
   }
 
@@ -58,7 +69,8 @@ const ItemDetail = () => {
       </div>
       <div className="sectionStock">
         <p>Stock disponible: {item.stock}</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={addHandler}>Agregar al Carrito</button>
+        <Clicker/>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded buttton" onClick={addHandler}>Agregar al Carrito</button>
       </div>      
 </div>
   )
