@@ -129,6 +129,10 @@ header li {
   height: 210px;
 }
 
+.urlImg2{
+  height: 400px;
+}
+
 .itemCard{
   height: 400px;
   width: 290px;
@@ -191,18 +195,34 @@ header li {
   margin-top: -200px;
 }
 
+.titlesProducts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: aliceblue;
+  align-items: center;
+  height: 50px;
+}
+
+.titlesProducts li{
+  margin-left: 200px;
+  font-weight: bolder;
+}
+
 
 .linea{
     border-top: 3px solid rgb(8, 8, 8);
     height: 2px;
-    max-width: 400px;
-    margin-top: 5px;
+    max-width: 900px;
 }
 
 .sectionCart{
   width: 100%;
-  background-color: gray;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -226,24 +246,42 @@ header li {
   margin-top: 15px;
   align-items: center;
   margin-bottom: 15px;
-  background-color: white;
 }
 
 .imgCartSize{
-  width: 120px;
-  height: 70px;
+  width: 200px;
+  height: 150px;
 }
 
 .priceDetail{
+  margin-left: 80px;
   font-size: 20px;
+}
+
+.countTotal{
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: right;
+  color: black;
 }
 
 .sectionButton{
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  /* width: 70%; */
 }
 
 .buttonClear{
-  width: 150px;
-  justify-items: right;
+  width: 200px;
 }
+
+.buttonCheck{
+  width: 200px;
+  /* margin-left: 500px; */
+  justify-content: end;
+}
+
+

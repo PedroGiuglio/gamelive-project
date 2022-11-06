@@ -3,12 +3,12 @@ import { useCart } from "./context/AddContext"
 
 
 export const CartWidget = () => {
-  const {count} = useCart()
+  const {counter} = useCart()
 
   return (
     <div className="cartWidget">
          <img src="https://img.icons8.com/material-sharp/24/000000/shopping-cart.png"/> 
-         <Link to='/cart' className="font-bold">{count}</Link>
+         <Link to='/cart' className="font-bold">{counter}</Link>
     </div>
   )
 }
